@@ -1,6 +1,6 @@
 
-import React, { useRef, useEffect } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import SoloBadge from './SoloBadge';
 import { User } from 'lucide-react';
@@ -26,22 +26,22 @@ const HunterIDCard: React.FC<HunterIDCardProps> = ({
     offset: ['start end', 'end start']
   });
 
-  // Enhanced transform values for more dramatic 3D effect
-  const rotateX = useTransform(scrollYProgress, [0, 0.5], [25, -25]);
-  const rotateY = useTransform(scrollYProgress, [0, 0.5], [10, -10]);
-  const scale = useTransform(scrollYProgress, [0, 0.2, 0.5, 0.8, 1], [0.8, 1, 1.08, 1, 0.8]);
-  const translateY = useTransform(scrollYProgress, [0, 0.5, 1], [80, 0, -150]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.4, 1, 1, 0.4]);
-  const glow = useTransform(scrollYProgress, [0, 0.5, 1], [5, 20, 5]);
+  // Updated transform values for centered ID card
+  const rotateX = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0, 15]);
+  const rotateY = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0, 10]);
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.5, 0.8, 1], [1, 1.05, 1.05, 0.95, 0.8]);
+  const translateY = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0, -150]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [1, 1, 0.8, 0.4]);
+  const glow = useTransform(scrollYProgress, [0, 0.5, 1], [20, 15, 5]);
 
   return (
-    <div ref={cardRef} className="relative py-8 w-full flex justify-center perspective-1000 z-10">
+    <div ref={cardRef} className="relative py-12 w-full flex justify-center perspective-1000 z-10">
       <motion.div 
         className={cn(
           "solo-card-golden max-w-md w-full p-6 relative z-10 shadow-golden overflow-visible",
           className
         )}
-        initial={{ opacity: 0, y: 50, rotateX: 20 }}
+        initial={{ opacity: 0, y: 50, rotateX: 0 }}
         animate={{ opacity: 1, y: 0, rotateX: 0 }}
         transition={{ duration: 1.2, type: "spring", bounce: 0.3 }}
         style={{

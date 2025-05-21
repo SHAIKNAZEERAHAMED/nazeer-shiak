@@ -23,7 +23,7 @@ const rankers: RankerProps[] = [
 const RankingList: React.FC = () => {
   return (
     <motion.div 
-      className="w-full px-4 py-8"
+      className="w-full px-4 py-8 mt-16"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.5 }}
