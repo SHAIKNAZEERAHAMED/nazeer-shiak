@@ -70,7 +70,9 @@ export default {
                     accent: '#9b87f5',
                     highlight: '#1EAEDB',
                     gray: '#8E9196',
-                    dungeon: '#0d0e11'
+                    dungeon: '#0d0e11',
+                    gold: '#FFD700',
+                    goldDark: '#B8860B'
                 }
 			},
 			borderRadius: {
@@ -102,11 +104,11 @@ export default {
                 'pulse-glow': {
                     '0%, 100%': { 
                         opacity: '1',
-                        filter: 'drop-shadow(0 0 5px rgba(155, 135, 245, 0.8))' 
+                        filter: 'drop-shadow(0 0 5px rgba(255, 215, 0, 0.8))' 
                     },
                     '50%': { 
                         opacity: '0.8',
-                        filter: 'drop-shadow(0 0 15px rgba(155, 135, 245, 0.5))' 
+                        filter: 'drop-shadow(0 0 15px rgba(255, 215, 0, 0.5))' 
                     },
                 },
                 'gradient-x': {
@@ -118,6 +120,24 @@ export default {
                     '0%': { transform: 'rotateX(10deg) rotateY(10deg)' },
                     '50%': { transform: 'rotateX(-5deg) rotateY(-5deg)' },
                     '100%': { transform: 'rotateX(10deg) rotateY(10deg)' },
+                },
+                'shine': {
+                    '0%': { backgroundPosition: '200% 0' },
+                    '100%': { backgroundPosition: '-200% 0' }
+                },
+                'golden-pulse': {
+                    '0%, 100%': { 
+                        boxShadow: '0 0 5px rgba(255, 215, 0, 0.6)',
+                        borderColor: 'rgba(255, 215, 0, 0.3)'
+                    },
+                    '50%': { 
+                        boxShadow: '0 0 20px rgba(255, 215, 0, 0.8)',
+                        borderColor: 'rgba(255, 215, 0, 0.6)'
+                    }
+                },
+                'rotate-slow': {
+                    '0%': { transform: 'rotate(0deg)' },
+                    '100%': { transform: 'rotate(360deg)' }
                 }
 			},
 			animation: {
@@ -127,6 +147,9 @@ export default {
                 'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
                 'gradient-x': 'gradient-x 15s ease infinite',
                 'card-float': 'card-float 6s ease-in-out infinite',
+                'shine': 'shine 3s linear infinite',
+                'golden-pulse': 'golden-pulse 4s ease-in-out infinite',
+                'rotate-slow': 'rotate-slow 20s linear infinite'
 			},
             fontFamily: {
                 code: ['Fira Code', 'monospace'],
@@ -136,6 +159,7 @@ export default {
                 'hero-pattern': "url('/img/hero-pattern.svg')",
                 'gradient-solo': 'linear-gradient(to right, #1A1F2C, #30243F)',
                 'gradient-purple': 'linear-gradient(90deg, rgba(155,135,245,0.15) 0%, rgba(139,92,246,0.15) 100%)',
+                'gradient-gold': 'linear-gradient(90deg, #FFD700 0%, #B8860B 100%)',
             },
 		}
 	},

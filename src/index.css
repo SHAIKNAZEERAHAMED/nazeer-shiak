@@ -43,9 +43,10 @@
   }
 
   body {
-    @apply bg-solo-dark text-foreground;
+    @apply bg-black text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239b87f5' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23222222' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
   }
 
   /* Custom scrollbar */
@@ -58,11 +59,11 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-solo-purple/60 rounded-full;
+    @apply bg-yellow-500/60 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-solo-purple/80;
+    @apply bg-yellow-500/80;
   }
 }
 
@@ -71,12 +72,20 @@
     text-shadow: 0 0 8px theme('colors.solo.accent'), 0 0 12px theme('colors.solo.accent');
   }
   
+  .golden-glow {
+    text-shadow: 0 0 8px theme('colors.yellow.500'), 0 0 12px theme('colors.yellow.400');
+  }
+  
   .box-glow {
     box-shadow: 0 0 15px theme('colors.solo.accent');
   }
   
   .shadow-glow {
     box-shadow: 0 0 10px theme('colors.solo.accent/50');
+  }
+  
+  .shadow-golden {
+    box-shadow: 0 0 10px theme('colors.yellow.500/60');
   }
 
   .glass-card {
@@ -93,9 +102,24 @@
     content: '';
     @apply absolute inset-0 bg-gradient-to-r from-solo-purple/10 to-transparent opacity-30 pointer-events-none;
   }
+
+  .solo-card-golden {
+    @apply bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-md 
+           border border-yellow-500/30 rounded-lg shadow-md relative
+           overflow-hidden;
+  }
+  
+  .solo-card-golden::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-transparent opacity-30 pointer-events-none;
+  }
   
   .gradient-text {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-solo-accent to-solo-purple;
+  }
+  
+  .golden-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500;
   }
 
   .section-heading {
@@ -132,6 +156,11 @@
     @apply flex items-center justify-between solo-panel text-sm mb-2;
   }
   
+  .solo-status-golden {
+    @apply flex items-center justify-between bg-gray-900/70 backdrop-blur-sm p-4 rounded-lg 
+           border border-yellow-500/20 shadow-lg relative text-sm mb-2;
+  }
+  
   .solo-status-label {
     @apply text-white/60 uppercase tracking-wider text-xs font-medium;
   }
@@ -154,10 +183,10 @@
   
   /* Igris Dungeon Background */
   .bg-igris-dungeon {
-    background-color: #0d0e11;
+    background-color: #000000;
     background-image: 
-      linear-gradient(0deg, rgba(13, 14, 17, 0.9) 0%, rgba(13, 14, 17, 0.5) 100%),
-      url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238b5cf6' fill-opacity='0.05'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 100%),
+      url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffd700' fill-opacity='0.05'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
   
   .perspective-1000 {
