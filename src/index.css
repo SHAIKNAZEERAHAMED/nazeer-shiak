@@ -45,6 +45,7 @@
   body {
     @apply bg-solo-dark text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239b87f5' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 
   /* Custom scrollbar */
@@ -67,15 +68,30 @@
 
 @layer components {
   .text-glow {
-    text-shadow: 0 0 8px theme('colors.solo.accent');
+    text-shadow: 0 0 8px theme('colors.solo.accent'), 0 0 12px theme('colors.solo.accent');
   }
   
   .box-glow {
     box-shadow: 0 0 15px theme('colors.solo.accent');
   }
+  
+  .shadow-glow {
+    box-shadow: 0 0 10px theme('colors.solo.accent/50');
+  }
 
   .glass-card {
     @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-lg;
+  }
+  
+  .solo-card {
+    @apply bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-md 
+           border border-solo-purple/30 rounded-lg shadow-md relative
+           overflow-hidden;
+  }
+  
+  .solo-card::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-solo-purple/10 to-transparent opacity-30 pointer-events-none;
   }
   
   .gradient-text {
@@ -92,5 +108,47 @@
 
   .max-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Solo Leveling specific styles */
+  .solo-border {
+    @apply border border-solo-purple/30 rounded-lg relative;
+  }
+  
+  .solo-border::after {
+    content: '';
+    @apply absolute -top-0.5 -bottom-0.5 -left-0.5 -right-0.5 rounded-lg pointer-events-none;
+    background: linear-gradient(135deg, theme('colors.solo.purple') 0%, transparent 50%, theme('colors.solo.accent') 100%);
+    z-index: -1;
+    opacity: 0.5;
+  }
+  
+  .solo-panel {
+    @apply bg-gray-900/70 backdrop-blur-sm p-4 rounded-lg 
+           border border-solo-purple/20 shadow-lg relative;
+  }
+  
+  .solo-status {
+    @apply flex items-center justify-between solo-panel text-sm mb-2;
+  }
+  
+  .solo-status-label {
+    @apply text-white/60 uppercase tracking-wider text-xs font-medium;
+  }
+  
+  .solo-status-value {
+    @apply text-white font-mono text-glow;
+  }
+  
+  .solo-progress {
+    @apply h-1.5 bg-white/10 rounded-full overflow-hidden relative;
+  }
+  
+  .solo-progress-bar {
+    @apply absolute top-0 left-0 bottom-0 bg-gradient-to-r from-solo-purple to-solo-accent;
+  }
+  
+  .hexagon-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3Ehexagons%3C/title%3E%3Cg fill='%239C92AC' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M12 0l12 6v12l-12 6L0 18V6z'/%3E%3C/g%3E%3C/svg%3E");
   }
 }
