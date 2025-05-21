@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from '@/components/ui/button';
 import ThreeScene from '@/components/ThreeScene';
@@ -10,6 +9,8 @@ import ProjectCard from '@/components/ProjectCard';
 import ParallaxCard from '@/components/ParallaxCard';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import HunterIDCard from '@/components/HunterIDCard';
+import RankingList from '@/components/RankingList';
 
 // Mock data for project placeholders
 const techProjects = [
@@ -115,15 +116,15 @@ const Index = () => {
   
   return (
     <div 
-      className="min-h-screen bg-solo-dark text-white overflow-hidden"
+      className="min-h-screen bg-solo-dark text-white overflow-x-hidden"
       onMouseMove={handleMouseMove}
     >
       <Navbar />
       
-      {/* Hero Section */}
+      {/* Hero Section with Igris Dungeon Background */}
       <section 
         id="home" 
-        className="min-h-screen relative flex items-center justify-center overflow-hidden"
+        className="min-h-screen relative flex flex-col items-center justify-center overflow-hidden bg-igris-dungeon"
       >
         {/* Background 3D scene */}
         <div className="absolute inset-0 z-0 opacity-40">
@@ -131,10 +132,17 @@ const Index = () => {
         </div>
         
         {/* Gradient overlay */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-solo-dark/0 via-solo-dark/50 to-solo-dark"></div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-solo-dark/0 via-solo-dark/80 to-solo-dark"></div>
         
         {/* Content */}
-        <div className="max-container relative z-10">
+        <div className="max-container relative z-10 flex flex-col items-center">
+          {/* Hunter ID Card */}
+          <HunterIDCard 
+            name="Shaik Nazeer Ahamed" 
+            rank="S" 
+            level={100}
+          />
+          
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -143,24 +151,8 @@ const Index = () => {
               delay: 0.2,
               ease: [0.25, 0.1, 0.25, 1] 
             }}
-            className="text-center"
+            className="text-center mt-4"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4">
-              <span className="block">
-                <AnimatedText 
-                  text="Shaik Nazeer Ahamed" 
-                  className="gradient-text"
-                  delay={1}
-                />
-              </span>
-              <span className="text-2xl md:text-3xl lg:text-4xl text-white/90 mt-2 block font-light">
-                <AnimatedText 
-                  text="Full Stack Dev by Day, Editor by Night" 
-                  delay={2}
-                />
-              </span>
-            </h1>
-            
             <motion.p 
               className="text-lg mt-6 max-w-2xl mx-auto text-white/70"
               initial={{ opacity: 0 }}
@@ -193,6 +185,11 @@ const Index = () => {
               </Button>
             </motion.div>
           </motion.div>
+        </div>
+        
+        {/* Ranking List */}
+        <div className="w-full max-w-3xl mx-auto mt-16 z-10 relative">
+          <RankingList />
         </div>
         
         {/* Scroll indicator */}

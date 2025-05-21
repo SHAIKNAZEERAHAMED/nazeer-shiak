@@ -69,7 +69,8 @@ export default {
                     purple: '#8B5CF6',
                     accent: '#9b87f5',
                     highlight: '#1EAEDB',
-                    gray: '#8E9196'
+                    gray: '#8E9196',
+                    dungeon: '#0d0e11'
                 }
 			},
 			borderRadius: {
@@ -113,6 +114,11 @@ export default {
                     '50%': { backgroundPosition: '100% 50%' },
                     '100%': { backgroundPosition: '0% 50%' },
                 },
+                'card-float': {
+                    '0%': { transform: 'rotateX(10deg) rotateY(10deg)' },
+                    '50%': { transform: 'rotateX(-5deg) rotateY(-5deg)' },
+                    '100%': { transform: 'rotateX(10deg) rotateY(10deg)' },
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -120,6 +126,7 @@ export default {
                 'float': 'float 6s ease-in-out infinite',
                 'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
                 'gradient-x': 'gradient-x 15s ease infinite',
+                'card-float': 'card-float 6s ease-in-out infinite',
 			},
             fontFamily: {
                 code: ['Fira Code', 'monospace'],
