@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
@@ -31,7 +30,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-solo-dark/90 backdrop-blur-md border-b border-solo-purple/20' : ''}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-card border-b border-solo-purple/30 shadow-solo-glow' : 'bg-transparent'}`}>
       <div className="max-container flex items-center justify-between py-4">
         {/* Logo */}
         <a href="#home" className="text-2xl font-bold gradient-text">Shaik<span className="text-white">.</span></a>
