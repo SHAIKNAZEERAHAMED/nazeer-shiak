@@ -46,6 +46,7 @@ const editingSkills = [
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   
@@ -58,6 +59,7 @@ const Index = () => {
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoaded(true);
+      setTimeout(() => setShowIntro(false), 4200); // Show intro for 4.2s
     }, 500);
     
     return () => clearTimeout(timer);
@@ -68,6 +70,36 @@ const Index = () => {
       className="min-h-screen bg-solo-dark text-white overflow-x-hidden"
       onMouseMove={handleMouseMove}
     >
+      {showIntro && (
+        <motion.div
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0 }}
+          transition={{ delay: 1.8, duration: 0.4, ease: 'easeInOut' }}
+          className="fixed inset-0 z-[999] flex items-center justify-center bg-gradient-to-br from-black via-solo-dark to-solo-purple/80"
+        >
+          <div className="flex flex-col items-center gap-4">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8, type: 'spring', bounce: 0.3 }}
+              className="text-4xl md:text-6xl font-bold gradient-text drop-shadow-lg text-center"
+              style={{ letterSpacing: '0.04em' }}
+            >
+              <span className="block">Shaik Nazeer</span>
+              <span className="block text-lg md:text-2xl font-normal text-white/80 tracking-widest mt-2">PORTFOLIO</span>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.7, ease: 'easeOut' }}
+              className="mt-6"
+            >
+              <span className="text-solo-highlight text-lg md:text-xl font-mono tracking-widest animate-pulse">Leveling Up...</span>
+            </motion.div>
+          </div>
+        </motion.div>
+      )}
+      
       <Navbar />
       
       {/* Hero Section with Solo Leveling-inspired Background */}
