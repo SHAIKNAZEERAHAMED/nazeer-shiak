@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -33,47 +32,31 @@ export default {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
-				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
+				accent: {
+					DEFAULT: 'hsl(var(--accent))',
+					foreground: 'hsl(var(--accent-foreground))'
 				},
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
 					foreground: 'hsl(var(--muted-foreground))'
 				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+				gold: {
+					400: '#FFD700',
+					500: '#FFC300',
+					600: '#B8860B',
 				},
-				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
+				purple: {
+					400: '#B794F4',
+					500: '#8B5CF6',
+					600: '#6D28D9',
+					950: '#2E1065',
 				},
-				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
-				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				},
-                // Solo Leveling inspired theme colors
-                solo: {
-                    dark: '#1A1F2C',
-                    purple: '#8B5CF6',
-                    accent: '#9b87f5',
-                    highlight: '#1EAEDB',
-                    gray: '#8E9196',
-                    dungeon: '#0d0e11',
-                    gold: '#FFD700',
-                    goldDark: '#B8860B'
-                }
+				black: '#000',
+				// Solo Leveling inspired
+				'solo-dark': '#0a0a0f',
+				'solo-purple': '#8B5CF6',
+				'solo-highlight': '#FFD700',
+				'solo-accent': '#B794F4',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -154,13 +137,23 @@ export default {
             fontFamily: {
                 code: ['Fira Code', 'monospace'],
                 sans: ['Inter', 'sans-serif'],
+                'heading': ['Oswald', 'Bebas Neue', 'Montserrat', 'sans-serif'],
+                'body': ['Inter', 'Roboto', 'sans-serif'],
             },
             backgroundImage: {
                 'hero-pattern': "url('/img/hero-pattern.svg')",
                 'gradient-solo': 'linear-gradient(to right, #1A1F2C, #30243F)',
-                'gradient-purple': 'linear-gradient(90deg, rgba(155,135,245,0.15) 0%, rgba(139,92,246,0.15) 100%)',
+                'gradient-purple': 'linear-gradient(90deg, rgba(155, 135, 245, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%)',
+                'gradient-gold': 'linear-gradient(90deg, #FFD700 0%, #B8860B 100%)',
+                'solo-leveling': 'radial-gradient(ellipse at 60% 40%, rgba(155,135,245,0.18) 0%, rgba(10,10,15,0.95) 70%), linear-gradient(120deg, #0a0a0f 60%, #2E1065 100%)',
+                'gradient-solo': 'linear-gradient(to right, #1A1F2C, #30243F)',
+                'gradient-purple': 'linear-gradient(90deg, rgba(155, 135, 245, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%)',
                 'gradient-gold': 'linear-gradient(90deg, #FFD700 0%, #B8860B 100%)',
             },
+			boxShadow: {
+				'solo-glow': '0 0 32px 0 #FFD700, 0 0 8px 0 #8B5CF6',
+				'solo-card': '0 4px 32px 0 rgba(139,92,246,0.15), 0 1.5px 8px 0 #FFD70044',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

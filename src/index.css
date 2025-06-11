@@ -1,37 +1,36 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 230 25% 12%;
+    --background: 240 30% 8%; /* deep black with a hint of blue */
     --foreground: 0 0% 98%;
 
-    --card: 230 25% 12%;
+    --card: 240 30% 10%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 230 25% 12%;
+    --popover: 240 30% 10%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 260 84% 60%;
+    --primary: 270 90% 50%; /* vibrant purple */
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 230 20% 20%;
+    --secondary: 270 40% 20%; /* muted purple */
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 230 20% 20%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 240 20% 20%;
+    --muted-foreground: 48 96% 60%; /* gold accent for muted text */
 
-    --accent: 260 84% 60%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 48 96% 60%; /* gold */
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 230 20% 20%;
-    --input: 230 20% 20%;
-    --ring: 260 84% 60%;
+    --border: 48 96% 60%; /* gold border */
+    --input: 270 40% 20%;
+    --ring: 270 90% 50%;
 
     --radius: 0.5rem;
   }
@@ -46,7 +45,7 @@
     @apply bg-black text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
     background-color: #000000;
-    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23222222' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23222222' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
   }
 
   /* Custom scrollbar */
@@ -73,7 +72,7 @@
   }
   
   .golden-glow {
-    text-shadow: 0 0 8px theme('colors.yellow.500'), 0 0 12px theme('colors.yellow.400');
+    text-shadow: 0 0 8px #FFD700, 0 0 12px #8B5CF6;
   }
   
   .box-glow {
@@ -89,45 +88,65 @@
   }
 
   .glass-card {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-lg;
+    background: rgba(10,10,15,0.7);
+    border: 1.5px solid #FFD70044;
+    border-radius: 1rem;
+    box-shadow: 0 0 32px 0 #FFD70033, 0 0 8px 0 #8B5CF622;
+    backdrop-filter: blur(8px);
   }
   
   .solo-card {
-    @apply bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-md 
-           border border-solo-purple/30 rounded-lg shadow-md relative
-           overflow-hidden;
+    background: linear-gradient(120deg, #0a0a0f 60%, #2E1065 100%);
+    border: 1.5px solid #FFD70044;
+    border-radius: 1rem;
+    box-shadow: 0 4px 32px 0 rgba(139,92,246,0.15), 0 1.5px 8px 0 #FFD70044;
+    position: relative;
+    overflow: hidden;
   }
   
   .solo-card::after {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-solo-purple/10 to-transparent opacity-30 pointer-events-none;
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, #FFD70022 0%, #8B5CF622 100%);
+    opacity: 0.25;
+    pointer-events: none;
   }
 
-  .solo-card-golden {
-    @apply bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-md 
-           border border-yellow-500/30 rounded-lg shadow-md relative
-           overflow-hidden;
-  }
-  
-  .solo-card-golden::after {
-    content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-transparent opacity-30 pointer-events-none;
-  }
-  
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-solo-accent to-solo-purple;
-  }
-  
-  .golden-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500;
+    background: linear-gradient(90deg, #FFD700 0%, #8B5CF6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
   }
 
   .section-heading {
-    @apply text-2xl md:text-3xl font-bold mb-6 gradient-text;
+    font-family: 'Oswald', 'Bebas Neue', 'Montserrat', sans-serif;
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #FFD700 0%, #8B5CF6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
   }
 
   .btn-primary {
-    @apply px-6 py-2 bg-solo-purple hover:bg-solo-accent text-white rounded-md transition-all transform hover:scale-105;
+    padding: 0.75rem 2rem;
+    background: linear-gradient(90deg, #8B5CF6 0%, #FFD700 100%);
+    color: #fff;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    box-shadow: 0 0 12px #FFD70044;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(90deg, #FFD700 0%, #8B5CF6 100%);
+    color: #0a0a0f;
+    box-shadow: 0 0 24px #FFD70099;
   }
 
   .max-container {
@@ -148,8 +167,7 @@
   }
   
   .solo-panel {
-    @apply bg-gray-900/70 backdrop-blur-sm p-4 rounded-lg 
-           border border-solo-purple/20 shadow-lg relative;
+    @apply bg-black/70 backdrop-blur-sm p-4 rounded-lg border border-yellow-500/20 shadow-lg relative;
   }
   
   .solo-status {
@@ -157,16 +175,15 @@
   }
   
   .solo-status-golden {
-    @apply flex items-center justify-between bg-gray-900/70 backdrop-blur-sm p-4 rounded-lg 
-           border border-yellow-500/20 shadow-lg relative text-sm mb-2;
+    @apply flex items-center justify-between bg-black/70 backdrop-blur-sm p-4 rounded-lg border border-yellow-500/20 shadow-lg relative text-sm mb-2;
   }
   
   .solo-status-label {
-    @apply text-white/60 uppercase tracking-wider text-xs font-medium;
+    @apply text-yellow-400 uppercase tracking-wider text-xs font-medium;
   }
   
   .solo-status-value {
-    @apply text-white font-mono text-glow;
+    @apply text-yellow-300 font-mono golden-glow;
   }
   
   .solo-progress {

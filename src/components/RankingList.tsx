@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import SoloBadge from './SoloBadge';
@@ -13,11 +12,16 @@ interface RankerProps {
   imageSrc?: string;
 }
 
+// Only SAKI remains in the list, now with the new image
 const rankers: RankerProps[] = [
-  { position: 2, name: "Choi Jong-In", rank: "S", level: 97, guild: "Knights", imageSrc: "https://i.imgur.com/W6CJoIK.jpg" },
-  { position: 3, name: "Baek Yoon-Ho", rank: "S", level: 94, guild: "White Tiger", imageSrc: "https://i.imgur.com/LSlhN4K.jpg" },
-  { position: 4, name: "Cha Hae-In", rank: "S", level: 93, guild: "Knights", imageSrc: "https://i.imgur.com/g2FdpZY.jpg" },
-  { position: 5, name: "Min Byung-Gu", rank: "S", level: 91, guild: "Hunters", imageSrc: "https://i.imgur.com/QgR5hkH.jpg" }
+  {
+    position: 2,
+    name: "SASI KIRAN(SAKI)",
+    rank: "S",
+    level: 97,
+    guild: "Knights",
+    imageSrc: "/saki-profile.ico" // Place the provided image in your public folder as saki-profile.jpg
+  }
 ];
 
 const RankingList: React.FC = () => {

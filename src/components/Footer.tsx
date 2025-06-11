@@ -28,10 +28,10 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Connect</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-solo-accent transition-colors">GitHub</a></li>
+              <li><a href="https://github.com/SHAIKNAZEERAHAMED" className="text-muted-foreground hover:text-solo-accent transition-colors">GitHub</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-solo-accent transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-solo-accent transition-colors">Behance</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-solo-accent transition-colors">Email</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-solo-accent transition-colors">Instagram</a></li>
+              <li><a href="mailto:yernstudios@gmail.com" className="text-muted-foreground hover:text-solo-accent transition-colors">Email</a></li>
             </ul>
           </div>
         </div>
