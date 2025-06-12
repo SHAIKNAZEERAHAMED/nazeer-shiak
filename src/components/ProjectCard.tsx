@@ -15,6 +15,7 @@ interface ProjectCardProps {
 	title: string;
 	description: string;
 	imageSrc?: string;
+	videoSrc?: string; // <-- Added videoSrc prop
 	tags: string[];
 	demoLink?: string;
 	codeLink?: string;
@@ -27,6 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(
 		title,
 		description,
 		imageSrc,
+		videoSrc, // <-- Destructure videoSrc
 		tags,
 		demoLink,
 		codeLink,
@@ -47,14 +49,46 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(
 				)}
 			>
 				<Card className="h-full overflow-hidden bg-gradient-to-br from-secondary/80 to-secondary/40 border-white/5 transition-shadow duration-300 group-hover:shadow-xl">
-					{imageSrc && (
-						<div className="w-full h-48 overflow-hidden">
+					{type === 'editing' && videoSrc ? (
+						<div className="w-full h-48 overflow-hidden flex items-center justify-center bg-black">
+							<video
+								src={videoSrc}
+								controls
+								className={
+									`max-h-full max-w-full transition-transform duration-500 group-hover:scale-105 will-change-transform bg-black ` +
+									`[data-orientation='vertical']:h-full [data-orientation='vertical']:w-auto [data-orientation='horizontal']:w-full [data-orientation='horizontal']:h-auto`
+								}
+								poster={imageSrc}
+								// Dynamically set data-orientation based on video aspect ratio
+								onLoadedMetadata={e => {
+									const video = e.currentTarget;
+									const orientation =
+										video.videoHeight > video.videoWidth
+											? 'vertical'
+											: 'horizontal';
+									video.setAttribute('data-orientation', orientation);
+								}}
+							/>
+						</div>
+					) : imageSrc && (
+						<div className="w-full h-48 overflow-hidden flex items-center justify-center bg-black">
 							<img
 								src={imageSrc}
 								alt={title}
 								loading="lazy"
 								decoding="async"
-								className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110 will-change-transform"
+								className={
+									`max-h-full max-w-full transition-transform duration-500 group-hover:scale-105 will-change-transform bg-black ` +
+									`[data-orientation='vertical']:h-full [data-orientation='vertical']:w-auto [data-orientation='horizontal']:w-full [data-orientation='horizontal']:h-auto`
+								}
+								onLoad={e => {
+									const img = e.currentTarget;
+									const orientation =
+										img.naturalHeight > img.naturalWidth
+											? 'vertical'
+											: 'horizontal';
+									img.setAttribute('data-orientation', orientation);
+								}}
 								onError={() =>
 									console.error(`Failed to load image: ${imageSrc}`)
 								}

@@ -356,6 +356,7 @@ const Index = () => {
                         title={project.title}
                         description={project.description}
                         imageSrc={project.imageSrc}
+                        videoSrc={project.videoSrc} // <-- Ensure this is passed for editing projects
                         tags={project.tags}
                         demoLink={project.demoLink}
                         type="editing"

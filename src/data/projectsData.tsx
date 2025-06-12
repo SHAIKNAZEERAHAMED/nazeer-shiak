@@ -3,8 +3,8 @@ export const projects = [
   {
     title: 'Looped',
     description: "A social media platform revolutionizing short-form video content. Built with React and Node.js, it features a dynamic feed system, real-time interactions, and AI-powered content recommendations. Users can create, edit, and share short videos with custom filters and effects.",
-    imageSrc: '/projects/looped-thumb.jpg',
-    tags: ['React', 'Node.js', 'MongoDB', 'WebRTC', 'Redux'],
+    imageSrc: '/projects/looped.jpg',
+    tags: ['React', 'Node.js', 'Firebase', 'AI', 'Redux','ML'],
     demoLink: 'https://looped-demo.vercel.app',
     codeLink: 'https://github.com/your-username/looped',
     type: 'tech' as const
@@ -12,8 +12,8 @@ export const projects = [
   {
     title: 'Asha Seva',
     description: "A platform bridging NGOs with volunteers, facilitating social impact projects. Features include real-time project matching, volunteer tracking, and impact measurement dashboards. Built with modern web technologies focusing on accessibility and user experience.",
-    imageSrc: '/projects/asha-seva-thumb.jpg',
-    tags: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
+    imageSrc: '/projects/asha seva.jpg',
+    tags: ['Next.js', 'TypeScript', 'ML', 'PostgreSQL','AI'],
     demoLink: 'https://asha-seva.vercel.app',
     codeLink: 'https://github.com/your-username/asha-seva',
     type: 'tech' as const
@@ -21,30 +21,33 @@ export const projects = [
 
   // Editing Projects
   {
-    title: 'Cinematic Wedding Highlights',
-    description: "Professional wedding highlight reels with cinematic color grading and emotional storytelling. Created using premium editing software with advanced color correction techniques.",
+    title: 'Cinematic Reels',
+    description: "Professional self highlighting reels with cinematic color grading and smooth transitions. Showcasing advanced editing techniques and visual storytelling.",
     imageSrc: '/projects/wedding-edit.jpg',
-    tags: ['Premiere Pro', 'Color Grading', 'Wedding'],
+    videoSrc: '/projects/cheif.mp4', // <-- Place your video file in public/projects/ and set the path here
+    tags: ['Premiere Pro', 'Color Grading', 'After Effects'],
     type: 'editing' as const
   },
   {
-    title: 'Commercial Product Showcase',
-    description: "High-end product advertisements with stunning visual effects and motion graphics. Incorporating 3D elements and dynamic transitions.",
+    title: 'aesthetic reels style 3d',
+    description: "High-end Intro with stunning visual effects and motion graphics. Incorporating 3D elements and dynamic transitions.",
     imageSrc: '/projects/commercial-edit.jpg',
+    videoSrc: '/projects/Fashion 2.mp4', // <-- Place your video file in public/projects/ and set the path here
     tags: ['After Effects', 'Motion Graphics', 'Commercial'],
     type: 'editing' as const
   },
   {
-    title: 'Music Video Production',
-    description: "Creative music video edits with synchronized visual effects and beat-matching transitions. Features dynamic color schemes and innovative visual storytelling.",
-    imageSrc: '/projects/music-video-edit.jpg',
-    tags: ['Music Video', 'Visual Effects', 'Color Grading'],
+    title: 'Photo Editing',
+    description: "Professional photo editing with advanced retouching, color correction, and creative enhancements. Ideal for portraits, product photography, and social media content.",
+    imageSrc: '/projects/naz X Legi.jpg',
+    tags: ['Cinematic Textures', 'PhotoShop', 'Color Grading'],
     type: 'editing' as const
   },
   {
-    title: 'Corporate Training Series',
-    description: "Professional educational content editing for corporate training programs. Clean cuts, engaging transitions, and clear information presentation.",
+    title: 'Kinetic Typography',
+    description: "Engaging kinetic typography videos with animated text and dynamic transitions. Perfect for promotional content and social media engagement.",
     imageSrc: '/projects/corporate-edit.jpg',
+    videoSrc: '/projects/GDG INTRO 2.mp4',
     tags: ['Corporate', 'Educational', 'Training'],
     type: 'editing' as const
   },
