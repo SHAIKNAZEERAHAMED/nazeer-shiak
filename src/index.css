@@ -41,7 +41,7 @@
     @apply border-border;
   }
 
-  body {    background: #0a0a0f url('/projects/BB1nUY9u.jpeg') center center/cover no-repeat fixed;
+  body {    background: #0a0a0f url('/projects/BB1nUY9u.ico') center center/cover no-repeat fixed;
     background-blend-mode: darken;
     min-height: 100vh;
     color: var(--foreground);
