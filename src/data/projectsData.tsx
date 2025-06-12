@@ -48,21 +48,15 @@ export const projects = [
     description: "Engaging kinetic typography videos with animated text and dynamic transitions. Perfect for promotional content and social media engagement.",
     imageSrc: '/projects/corporate-edit.jpg',
     videoSrc: '/projects/GDG INTRO 2.mp4',
-    tags: ['Corporate', 'Educational', 'Training'],
+    tags: ['Kinetic Typography', 'Motion Graphics', 'Social Media','after effects'],
     type: 'editing' as const
   },
   {
-    title: 'Social Media Content',
-    description: "Engaging short-form content for various social media platforms. Quick-paced editing with trending styles and effects.",
+    title: '3d motion graphics',
+    description: "High-end 3D motion graphics with stunning visual effects and dynamic animations. Ideal for commercials, intros, and promotional content.",
     imageSrc: '/projects/social-edit.jpg',
-    tags: ['Social Media', 'Short Form', 'Trending'],
-    type: 'editing' as const
-  },
-  {
-    title: 'Event Aftermovie',
-    description: "Dynamic event highlight videos capturing the essence of large-scale events. Featuring aerial shots and synchronized music editing.",
-    imageSrc: '/projects/event-edit.jpg',
-    tags: ['Events', 'Aftermovie', 'Highlights'],
+    videoSrc: '/projects/gdg g.mp4',
+    tags: ['3D Animation', 'Motion Graphics', 'Visual Effects'],
     type: 'editing' as const
   }
 ];

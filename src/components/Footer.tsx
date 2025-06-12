@@ -29,8 +29,8 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">Connect</h3>
             <ul className="space-y-2">
               <li><a href="https://github.com/SHAIKNAZEERAHAMED" className="text-muted-foreground hover:text-solo-accent transition-colors">GitHub</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-solo-accent transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-solo-accent transition-colors">Instagram</a></li>
+              <li><a href="https://www.linkedin.com/in/shaik-nazeer-ahamed-927546329/" className="text-muted-foreground hover:text-solo-accent transition-colors">LinkedIn</a></li>
+              <li><a href="https://www.instagram.com/nazeer_shiek?igsh=d25tM2djZHU5aGZ2" className="text-muted-foreground hover:text-solo-accent transition-colors">Instagram</a></li>
               <li><a href="mailto:yernstudios@gmail.com" className="text-muted-foreground hover:text-solo-accent transition-colors">Email</a></li>
             </ul>
           </div>

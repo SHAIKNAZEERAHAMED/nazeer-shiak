@@ -65,6 +65,45 @@ const Index = () => {
     return () => clearTimeout(timer);
   }, []);
   
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSending(true);
+    setError(null);
+    setSent(false);
+    try {
+      // Replace this with your backend/email API endpoint
+      const res = await fetch('https://formspree.io/f/xrbkqarw', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        }),
+      });
+      if (res.ok) {
+        setSent(true);
+        setForm({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setError('Failed to send. Please try again later.');
+      }
+    } catch (err) {
+      setError('Failed to send. Please try again later.');
+    } finally {
+      setSending(false);
+    }
+  };
+  
   return (
     <div 
       className="min-h-screen bg-solo-dark text-white overflow-x-hidden"
@@ -369,9 +408,11 @@ const Index = () => {
                 <p className="text-white/70 mb-4">
                   {/* These are placeholders. Add your editing projects here. */}
                 </p>
+                <a href="https://www.instagram.com/nazeer_shiek?igsh=d25tM2djZHU5aGZ2" className="text-white/70 mb-4 block">
                 <Button variant="outline" className="border-solo-highlight/50 text-white hover:bg-solo-highlight/20">
                   View All Editing Projects
                 </Button>
+                </a>
               </div>
             </TabsContent>
           </Tabs>
@@ -395,46 +436,61 @@ const Index = () => {
           
           <ParallaxCard className="max-w-3xl mx-auto">
             <div className="glass-card p-8 w-full">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-white mb-2">Name</label>
                     <input 
                       type="text" 
+                      name="name"
+                      value={form.name}
+                      onChange={handleInputChange}
                       className="w-full bg-white/5 border border-solo-purple/20 rounded-md px-4 py-3 text-white"
                       placeholder="Your name"
+                      required
                     />
                   </div>
                   <div>
                     <label className="block text-white mb-2">Email</label>
                     <input 
                       type="email" 
+                      name="email"
+                      value={form.email}
+                      onChange={handleInputChange}
                       className="w-full bg-white/5 border border-solo-purple/20 rounded-md px-4 py-3 text-white"
                       placeholder="Your email"
+                      required
                     />
                   </div>
                 </div>
-                
                 <div>
                   <label className="block text-white mb-2">Subject</label>
                   <input 
                     type="text" 
+                    name="subject"
+                    value={form.subject}
+                    onChange={handleInputChange}
                     className="w-full bg-white/5 border border-solo-purple/20 rounded-md px-4 py-3 text-white"
                     placeholder="Subject"
+                    required
                   />
                 </div>
-                
                 <div>
                   <label className="block text-white mb-2">Message</label>
                   <textarea 
+                    name="message"
+                    value={form.message}
+                    onChange={handleInputChange}
                     className="w-full bg-white/5 border border-solo-purple/20 rounded-md px-4 py-3 text-white h-32"
                     placeholder="Your message"
+                    required
                   ></textarea>
                 </div>
-                
+                {sent && <div className="text-green-400 text-center">Message sent successfully!</div>}
+                {error && <div className="text-red-400 text-center">{error}</div>}
                 <div className="text-center">
-                  <Button className="bg-solo-purple hover:bg-solo-accent text-white px-8 py-6" size="lg">
-                    Send Message
+                  <Button className="bg-solo-purple hover:bg-solo-accent text-white px-8 py-6" size="lg" type="submit" disabled={sending}>
+                    {sending ? 'Sending...' : 'Send Message'}
                   </Button>
                 </div>
               </form>
