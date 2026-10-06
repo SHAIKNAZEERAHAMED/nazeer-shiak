@@ -78,19 +78,17 @@ const HunterIDCard: React.FC<HunterIDCardProps> = ({
         <div className="space-y-2 mb-4">
           <div className="flex justify-between">
             <span className="text-gray-400">Guild</span>
-            <span className="text-yellow-300">{guild}</span> {/* Display guild dynamically */}
+            <span className="text-yellow-300">{guild}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-400">National Rank</span>
-            <span className="text-yellow-300">#1</span>
+            <span className="text-gray-400">Focus</span>
+            <span className="text-yellow-300">Full-Stack + AI/ML</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-400">Cleared Dungeons</span>
-            <span className="text-yellow-300">521</span>
+            <span className="text-gray-400">Featured Projects</span>
+            <span className="text-yellow-300">4</span>
           </div>
-        </div>
-
-        <div>
+        </div><div>
           <div className="flex justify-between text-xs text-gray-400">
             <span>Level Progress</span>
             <span className="text-yellow-400">{level} / {level + 1}</span>
