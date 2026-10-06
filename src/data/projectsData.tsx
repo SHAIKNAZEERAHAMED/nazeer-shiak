@@ -39,46 +39,41 @@ export const projects = [
 
   {
     title: 'Cinematic Reels',
-    description:
-      'Cinematic editing work with color grading, pacing and visual storytelling.',
-    imageSrc: '/logos/yernstudios.svg',
+    description: "Professional self highlighting reels with cinematic color grading and smooth transitions. Showcasing advanced editing techniques and visual storytelling.",
+    imageSrc: '/projects/wedding-edit.jpg',
     videoSrc: '/projects/cheif.mp4',
     tags: ['Premiere Pro', 'Color Grading', 'After Effects'],
-    type: 'editing' as const,
+    type: 'editing' as const
   },
   {
-    title: '3D Motion Reels',
-    description:
-      'Motion-focused editing work combining 3D elements, transitions and visual effects.',
-    imageSrc: '/logos/loopedcss.svg',
+    title: 'aesthetic reels style 3d',
+    description: "High-end Intro with stunning visual effects and motion graphics. Incorporating 3D elements and dynamic transitions.",
+    imageSrc: '/projects/commercial-edit.jpg',
     videoSrc: '/projects/Fashion 2.mp4',
-    tags: ['After Effects', 'Motion Graphics', '3D'],
-    type: 'editing' as const,
+    tags: ['After Effects', 'Motion Graphics', 'Commercial'],
+    type: 'editing' as const
   },
   {
     title: 'Photo Editing',
-    description:
-      'Photo editing work focused on retouching, color correction and cinematic visual treatment.',
-    imageSrc: '/logos/yernstudios.svg',
-    tags: ['Photo Editing', 'Color Grading', 'Visual Design'],
-    type: 'editing' as const,
+    description: "Professional photo editing with advanced retouching, color correction, and creative enhancements. Ideal for portraits, product photography, and social media content.",
+    imageSrc: '/projects/naz X Legi.jpg',
+    tags: ['Cinematic Textures', 'PhotoShop', 'Color Grading'],
+    type: 'editing' as const
   },
   {
     title: 'Kinetic Typography',
-    description:
-      'Motion graphics work using animated typography, transitions and social-content pacing.',
-    imageSrc: '/logos/loopedcss.svg',
-    videoSrc: '/logos/yernstudios.svg',
-    tags: ['Kinetic Typography', 'Motion Graphics', 'After Effects'],
-    type: 'editing' as const,
+    description: "Engaging kinetic typography videos with animated text and dynamic transitions. Perfect for promotional content and social media engagement.",
+    imageSrc: '/projects/corporate-edit.jpg',
+    videoSrc: '/projects/GDG INTRO 2.mp4',
+    tags: ['Kinetic Typography', 'Motion Graphics', 'Social Media','after effects'],
+    type: 'editing' as const
   },
   {
-    title: '3D Motion Graphics',
-    description:
-      'Motion design work combining 3D animation, visual effects and dynamic composition.',
-    imageSrc: '/logos/yernstudios.svg',
-    videoSrc: '/logos/aegis-v2.svg',
+    title: '3d motion graphics',
+    description: "High-end 3D motion graphics with stunning visual effects and dynamic animations. Ideal for commercials, intros, and promotional content.",
+    imageSrc: '/projects/social-edit.jpg',
+    videoSrc: '/projects/gdg g.mp4',
     tags: ['3D Animation', 'Motion Graphics', 'Visual Effects'],
-    type: 'editing' as const,
-  },
+    type: 'editing' as const
+  }
 ];
