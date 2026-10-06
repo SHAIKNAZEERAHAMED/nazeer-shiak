@@ -2,7 +2,7 @@
 
 Personal portfolio for Shaik Nazeer Ahamed — **Full Stack Developer | AI/ML Undergraduate | Video Editor**.
 
-Live portfolio: https://yernstudios.netlify.app/
+Live Yernstudios site: https://yernstudios.netlify.app/
 
 ## Highlights
 
