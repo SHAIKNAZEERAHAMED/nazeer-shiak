@@ -67,7 +67,7 @@ export const projects = [
     title: 'Kinetic Typography',
     description:
       'Motion graphics work using animated typography, transitions and social-content pacing.',
-    imageSrc: '/projects/GDG INTRO 2.mp4',
+    imageSrc: '/projects/looped.jpg',
     videoSrc: '/projects/GDG INTRO 2.mp4',
     tags: ['Kinetic Typography', 'Motion Graphics', 'After Effects'],
     type: 'editing' as const,
@@ -76,7 +76,7 @@ export const projects = [
     title: '3D Motion Graphics',
     description:
       'Motion design work combining 3D animation, visual effects and dynamic composition.',
-    imageSrc: '/projects/gdg g.mp4',
+    imageSrc: '/projects/naz X Legi.jpg',
     videoSrc: '/projects/gdg g.mp4',
     tags: ['3D Animation', 'Motion Graphics', 'Visual Effects'],
     type: 'editing' as const,
