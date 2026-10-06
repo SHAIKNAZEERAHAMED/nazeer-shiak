@@ -32,7 +32,6 @@ export const projects = [
       'Agency website built with React, TypeScript, Vite, Tailwind CSS, shadcn/ui and Supabase.',
     imageSrc: '/logos/graphdb.svg',
     tags: ['React', 'TypeScript', 'Vite', 'Supabase'],
-    demoLink: 'https://yernstudios.netlify.app/',
     codeLink: 'https://github.com/SHAIKNAZEERAHAMED/yernstudios',
     type: 'tech' as const,
   },
