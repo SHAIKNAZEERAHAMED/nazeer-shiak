@@ -3,7 +3,7 @@ export const projects = [
     title: 'Aegis V2 Privacy Pipeline',
     description:
       'Research MVP for privacy-preserving video capture using FastAPI, OpenCV, PyTorch and FaceNet. The pipeline focuses on protecting short captured video rather than claiming universal anonymity.',
-    imageSrc: '/logos/loopedcss.svg',
+    imageSrc: '/logos/aegis-v2.svg',
     tags: ['FastAPI', 'OpenCV', 'PyTorch', 'FaceNet'],
     codeLink: 'https://github.com/SHAIKNAZEERAHAMED/aegis-v2-privacy-pipeline',
     type: 'tech' as const,
@@ -30,7 +30,7 @@ export const projects = [
     title: 'Yernstudios',
     description:
       'Agency website built with React, TypeScript, Vite, Tailwind CSS, shadcn/ui and Supabase.',
-    imageSrc: '/logos/graphdb.svg',
+    imageSrc: '/logos/yernstudios.svg',
     tags: ['React', 'TypeScript', 'Vite', 'Supabase'],
     codeLink: 'https://github.com/SHAIKNAZEERAHAMED/yernstudios',
     type: 'tech' as const,
